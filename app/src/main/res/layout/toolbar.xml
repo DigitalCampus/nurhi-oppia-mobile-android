@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:minHeight="?attr/actionBarSize"
-    android:theme="@style/Oppia.Theme.Dark"
+    android:theme="@style/Oppia.ToolbarTheme"
     android:elevation="4dp"
     app:contentInsetLeft="0dp"
     app:contentInsetStart="0dp"
     app:contentInsetStartWithNavigation="0dp"
     style="@style/ActionBar.Solid.Om"
     android:paddingTop="@dimen/tool_bar_top_padding"
+    app:titleTextAppearance="@style/Oppia.ActionBar.TitleTextStyle"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 </android.support.v7.widget.Toolbar>

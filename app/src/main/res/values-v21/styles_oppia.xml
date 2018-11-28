@@ -14,6 +14,7 @@
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:textAppearanceButton">@style/TextAppearanceButtonBorderless</item>
         <item name="android:buttonStyle">@style/RaisedButton</item>
+        <item name="actionMenuTextColor">@android:color/white</item>
     </style>
 
     <style name="Oppia.ToolbarTheme.Dark" parent="@style/Oppia.ToolbarTheme">

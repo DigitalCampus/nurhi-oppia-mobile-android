@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
    	<color name="pressed_om">#CC9ACA3C</color>
-    <color name="highlight_light">#74b042</color>
-    <color name="highlight_mid">#9aca3c</color>
-    <color name="highlight_dark">#495525</color>
-    <color name="highlight_shadow">#597725</color>
-    <color name="highlight_secondary">#689e3a</color>
-    <color name="activity_completed_filter">#999aca3c</color>
+    <color name="highlight_light">#29528a</color>
+    <color name="highlight_mid">#29528a</color>
+    <color name="highlight_dark">#263c6e</color>
+    <color name="highlight_shadow">#395086</color>
+    <color name="highlight_secondary">#f07a00</color>
+    <color name="activity_completed_filter">#e6a45f</color>
 
-    <color name="tab_bg_color">@color/highlight_label</color>
-    <color name="tab_text_color">@color/text_light</color>
-    <color name="tab_selected_text_color">@color/text_light</color>
+    <color name="tab_bg_color">#ffcc01</color>
+    <color name="tab_text_color">#c46300</color>
+    <color name="tab_selected_text_color">@color/highlight_secondary</color>
 </resources>

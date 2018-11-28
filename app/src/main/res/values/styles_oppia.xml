@@ -41,6 +41,7 @@
 
     <style name="Oppia.Theme.Dark" parent="@style/Oppia.Theme">
         <item name="android:windowBackground">@color/background_dark</item>
+        <item name="actionMenuTextColor">@android:color/white</item>
     </style>
 
     <style name="TextAppearanceButtonBorderless" parent="TextAppearance.AppCompat.Widget.Button">
@@ -64,6 +65,7 @@
         <item name="colorPrimaryDark">@color/highlight_shadow</item>
         <item name="colorAccent">@color/highlight_secondary</item>
         <item name="windowActionModeOverlay">true</item>
+        <item name="actionMenuTextColor">@android:color/white</item>
     </style>
 
     <style name="Oppia.Dialog" parent="Theme.AppCompat.Light.Dialog">
@@ -93,10 +95,13 @@
         <item name="progressBarStyle">@style/ProgressBar.Om</item>
         <item name="titleTextStyle">@style/Oppia.ActionBar.TitleTextStyle</item>
         <item name="elevation">4dp</item>
+
+
+
     </style>
 
     <style name="Oppia.ActionBar.TitleTextStyle" parent="Base.ThemeOverlay.AppCompat.ActionBar">
-        <item name="android:textColor">@color/text_dark</item>
+        <item name="android:textColor">@color/text_light</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">17sp</item>
     </style>
@@ -158,7 +163,7 @@
     </style>
 
     <style name="Oppia.Theme.ActionBarTheme">
-        <item name="colorControlNormal">@color/text_dark</item>
+        <item name="colorControlNormal">@color/text_light</item>
     </style>
 
     <style name="Oppia.AlertDialogStyle" parent="Theme.AppCompat.Light.Dialog">
