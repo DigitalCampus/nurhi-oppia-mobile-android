@@ -85,6 +85,55 @@ public class RegisterFragment extends AppFragment implements SubmitListener, Reg
 		organisationField = (EditText) vv.findViewById(R.id.register_form_organisation_field);
 		phoneNoField = (EditText) vv.findViewById(R.id.register_form_phoneno_field);
 
+        /*
+		currentlyWorkingFacilityField = (EditText) vv.findViewById(R.id.currently_working_facility_field);
+
+		nurhiTrainingField = (EditText) vv.findViewById(R.id.register_form_nurhi_training_field);
+
+		staffTypeField = (Spinner) super.getActivity().findViewById(R.id.staff_type_spinner);
+		ArrayAdapter<CharSequence> stadapter = ArrayAdapter.createFromResource(super.getActivity(),
+				R.array.registerFormStaffType, android.R.layout.simple_spinner_item);
+		// Specify the layout to use when the list of choices appears
+		stadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		// Apply the adapter to the spinner
+		staffTypeField.setAdapter(stadapter);
+
+		fpMethodsProvided = (LinearLayout) super.getActivity().findViewById(R.id.register_form_fp_methods);
+		fpMethodsProvided.removeAllViews();
+		String[] fpMethods = getResources().getStringArray(R.array.registerFormFPMethods);
+		for (String s: fpMethods){
+			CheckBox chk= new CheckBox(super.getActivity());
+			chk.setText(s);
+			fpMethodsProvided.addView(chk);
+		}
+
+		highestEducationLevelField = (Spinner) super.getActivity().findViewById(R.id.education_level_spinner);
+		ArrayAdapter<CharSequence> heladapter = ArrayAdapter.createFromResource(super.getActivity(),
+				R.array.registerFormEducationalLevel, android.R.layout.simple_spinner_item);
+		// Specify the layout to use when the list of choices appears
+		heladapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		// Apply the adapter to the spinner
+		highestEducationLevelField.setAdapter(heladapter);
+
+		religionField = (Spinner) super.getActivity().findViewById(R.id.religion_spinner);
+		ArrayAdapter<CharSequence> radapter = ArrayAdapter.createFromResource(super.getActivity(),
+				R.array.registerFormReligion, android.R.layout.simple_spinner_item);
+		// Specify the layout to use when the list of choices appears
+		radapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		// Apply the adapter to the spinner
+		religionField.setAdapter(radapter);
+
+		sexField = (Spinner) super.getActivity().findViewById(R.id.sex_spinner);
+		ArrayAdapter<CharSequence> sadapter = ArrayAdapter.createFromResource(super.getActivity(),
+				R.array.registerFormSex, android.R.layout.simple_spinner_item);
+		// Specify the layout to use when the list of choices appears
+		sadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		// Apply the adapter to the spinner
+		sexField.setAdapter(sadapter);
+
+		ageField = (EditText) super.getActivity().findViewById(R.id.register_form_age_field);
+		*/
+
 		registerButton = (Button) vv.findViewById(R.id.register_btn);
 		loginButton = (Button) vv.findViewById(R.id.login_btn);
 		return vv;
