@@ -96,9 +96,13 @@ public class RegisterTask extends APIRequestTask<Payload, Object, Payload> {
             json.put("email",u.getEmail());
             json.put("firstname",u.getFirstname());
             json.put("lastname",u.getLastname());
-            json.put("jobtitle",u.getJobTitle());
-            json.put("organisation",u.getOrganisation());
-            json.put("phoneno",u.getPhoneNo());
+            //json.put("jobtitle",u.getJobTitle());
+            //json.put("organisation",u.getOrganisation());
+            //json.put("phoneno",u.getPhoneNo());
+            json.put("age_range",u.getAgeRange());
+            json.put("role",u.getRole());
+            json.put("sex",u.getSex());
+            json.put("location",u.getLocation());
 
             OkHttpClient client = HTTPClientUtils.getClient(ctx);
             Request request = new Request.Builder()

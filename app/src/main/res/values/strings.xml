@@ -393,5 +393,10 @@
     <string name="login_dont_have_account">Don\'t have an account yet?</string>
     <string name="offline_register_confirm">Alternatively, you can register offline and start using the app. Then, you\'ll need to submit or transfer your user data later</string>
     <string name="register_offline">Register offline</string>
+
+    <string name="register_form_sex_title">Gender</string>
+    <string name="register_form_role_title">Role</string>
+    <string name="register_form_location_title">Location/State</string>
+    <string name="register_form_agerange_title">Age Range</string>
 </resources>
 

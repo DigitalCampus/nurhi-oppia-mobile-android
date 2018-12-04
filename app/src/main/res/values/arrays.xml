@@ -36,4 +36,26 @@
         <item name="internal">internal</item>
         <item name="external">external</item>
     </string-array>
+
+    <string-array name="registerFormSex">
+        <item name="--"></item>
+        <item name="female">Female</item>
+        <item name="male">Male</item>
+        <item name="none">Prefer not to say</item>
+    </string-array>
+    <string-array name="registerFormRole">
+        <item name="--"></item>
+        <item name="fpprovider">FP provider</item>
+        <item name="fpmanager">FP manager/supervisor</item>
+        <item name="other">Other</item>
+    </string-array>
+    <string-array name="registerFormAgeRange">
+        <item name="--"></item>
+        <item name="under_18">under 18</item>
+        <item name="18_24">18 - 24</item>
+        <item name="25_34">25 - 34</item>
+        <item name="35_50">35 - 50</item>
+        <item name="over_50">over 50</item>
+        <item name="none">Prefer not to say</item>
+    </string-array>
 </resources>

@@ -39,6 +39,11 @@ public class User {
 	private int points = 0;
 	private int badges = 0;
 	private boolean offlineRegister = false;
+
+    private String sex;
+	private String ageRange;
+    private String role;
+	private String location;
 	
 	public String getUsername() {
 		return username;
@@ -164,4 +169,37 @@ public class User {
 	public void setOfflineRegister(boolean offlineRegister) {
 		this.offlineRegister = offlineRegister;
 	}
+
+    public String getAgeRange() {
+        return ageRange;
+    }
+
+    public void setAgeRange(String ageRange) {
+        this.ageRange = ageRange;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
 }

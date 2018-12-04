@@ -118,51 +118,53 @@
                         android:textSize="15sp"/>
                 </android.support.design.widget.TextInputLayout>
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <EditText
-                        android:id="@+id/register_form_phoneno_field"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/register_form_phoneno_title"
-                        android:inputType="phone"
-                        android:textSize="15sp"/>
-                </android.support.design.widget.TextInputLayout>
 
 
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/register_form_sex_title"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    >
+                    android:text="@string/register_form_sex_title" />
 
-                    <EditText
-                        android:id="@+id/register_form_organisation_field"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/register_form_organisation_title"
-                        android:inputType="text"
-                        android:textSize="15sp"/>
-                </android.support.design.widget.TextInputLayout>
+                <Spinner
+                    android:id="@+id/sex_spinner"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
 
+                <TextView
+                    android:id="@+id/register_form_role_title"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/register_form_role_title" />
 
+                <Spinner
+                    android:id="@+id/role_spinner"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/register_form_agerange_title"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/register_form_agerange_title" />
+
+                <Spinner
+                    android:id="@+id/agerange_spinner"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <EditText
-                        android:id="@+id/register_form_jobtitle_field"
+                        android:id="@+id/register_form_location_field"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/register_form_jobtitle_title"
+                        android:hint="@string/register_form_location_title"
                         android:inputType="text"
                         android:textSize="15sp"/>
-
                 </android.support.design.widget.TextInputLayout>
-
 
             </LinearLayout>
 

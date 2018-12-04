@@ -26,8 +26,10 @@ import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import org.digitalcampus.mobile.learning.R;
 import org.digitalcampus.oppia.activity.OppiaMobileActivity;
@@ -57,12 +59,17 @@ public class RegisterFragment extends AppFragment implements SubmitListener, Reg
 	private EditText passwordAgainField;
 	private EditText firstnameField;
 	private EditText lastnameField;
-	private EditText jobTitleField;
-	private EditText organisationField;
-	private EditText phoneNoField;
+	//private EditText jobTitleField;
+	//private EditText organisationField;
+	//private EditText phoneNoField;
 	private Button registerButton;
 	private Button loginButton;
 	private ProgressDialog pDialog;
+
+    private Spinner sexField;
+    private Spinner ageRangeField;
+    private Spinner roleField;
+    private EditText locationField;
 	
 	public static RegisterFragment newInstance() {
 	    return new RegisterFragment();
@@ -81,49 +88,11 @@ public class RegisterFragment extends AppFragment implements SubmitListener, Reg
 		passwordAgainField = (EditText) vv.findViewById(R.id.register_form_password_again_field);
 		firstnameField = (EditText) vv.findViewById(R.id.register_form_firstname_field);
 		lastnameField = (EditText) vv.findViewById(R.id.register_form_lastname_field);
-		jobTitleField = (EditText) vv.findViewById(R.id.register_form_jobtitle_field);
-		organisationField = (EditText) vv.findViewById(R.id.register_form_organisation_field);
-		phoneNoField = (EditText) vv.findViewById(R.id.register_form_phoneno_field);
+		//jobTitleField = (EditText) vv.findViewById(R.id.register_form_jobtitle_field);
+		//organisationField = (EditText) vv.findViewById(R.id.register_form_organisation_field);
+		//phoneNoField = (EditText) vv.findViewById(R.id.register_form_phoneno_field);
 
-        /*
-		currentlyWorkingFacilityField = (EditText) vv.findViewById(R.id.currently_working_facility_field);
-
-		nurhiTrainingField = (EditText) vv.findViewById(R.id.register_form_nurhi_training_field);
-
-		staffTypeField = (Spinner) super.getActivity().findViewById(R.id.staff_type_spinner);
-		ArrayAdapter<CharSequence> stadapter = ArrayAdapter.createFromResource(super.getActivity(),
-				R.array.registerFormStaffType, android.R.layout.simple_spinner_item);
-		// Specify the layout to use when the list of choices appears
-		stadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		// Apply the adapter to the spinner
-		staffTypeField.setAdapter(stadapter);
-
-		fpMethodsProvided = (LinearLayout) super.getActivity().findViewById(R.id.register_form_fp_methods);
-		fpMethodsProvided.removeAllViews();
-		String[] fpMethods = getResources().getStringArray(R.array.registerFormFPMethods);
-		for (String s: fpMethods){
-			CheckBox chk= new CheckBox(super.getActivity());
-			chk.setText(s);
-			fpMethodsProvided.addView(chk);
-		}
-
-		highestEducationLevelField = (Spinner) super.getActivity().findViewById(R.id.education_level_spinner);
-		ArrayAdapter<CharSequence> heladapter = ArrayAdapter.createFromResource(super.getActivity(),
-				R.array.registerFormEducationalLevel, android.R.layout.simple_spinner_item);
-		// Specify the layout to use when the list of choices appears
-		heladapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		// Apply the adapter to the spinner
-		highestEducationLevelField.setAdapter(heladapter);
-
-		religionField = (Spinner) super.getActivity().findViewById(R.id.religion_spinner);
-		ArrayAdapter<CharSequence> radapter = ArrayAdapter.createFromResource(super.getActivity(),
-				R.array.registerFormReligion, android.R.layout.simple_spinner_item);
-		// Specify the layout to use when the list of choices appears
-		radapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		// Apply the adapter to the spinner
-		religionField.setAdapter(radapter);
-
-		sexField = (Spinner) super.getActivity().findViewById(R.id.sex_spinner);
+		sexField = (Spinner) vv.findViewById(R.id.sex_spinner);
 		ArrayAdapter<CharSequence> sadapter = ArrayAdapter.createFromResource(super.getActivity(),
 				R.array.registerFormSex, android.R.layout.simple_spinner_item);
 		// Specify the layout to use when the list of choices appears
@@ -131,8 +100,23 @@ public class RegisterFragment extends AppFragment implements SubmitListener, Reg
 		// Apply the adapter to the spinner
 		sexField.setAdapter(sadapter);
 
-		ageField = (EditText) super.getActivity().findViewById(R.id.register_form_age_field);
-		*/
+        roleField = (Spinner) vv.findViewById(R.id.role_spinner);
+        ArrayAdapter<CharSequence> radapter = ArrayAdapter.createFromResource(super.getActivity(),
+                R.array.registerFormRole, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        radapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        roleField.setAdapter(radapter);
+
+        ageRangeField = (Spinner) vv.findViewById(R.id.agerange_spinner);
+        ArrayAdapter<CharSequence> aradapter = ArrayAdapter.createFromResource(super.getActivity(),
+                R.array.registerFormAgeRange, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        aradapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        ageRangeField.setAdapter(aradapter);
+
+        locationField = (EditText) vv.findViewById(R.id.register_form_location_field);
 
 		registerButton = (Button) vv.findViewById(R.id.register_btn);
 		loginButton = (Button) vv.findViewById(R.id.login_btn);
@@ -193,9 +177,9 @@ public class RegisterFragment extends AppFragment implements SubmitListener, Reg
 		String passwordAgain = passwordAgainField.getText().toString();
 		String firstname = firstnameField.getText().toString();
 		String lastname = lastnameField.getText().toString();
-		String phoneNo = phoneNoField.getText().toString();
-		String jobTitle = jobTitleField.getText().toString();
-		String organisation = organisationField.getText().toString();
+		//String phoneNo = phoneNoField.getText().toString();
+		//String jobTitle = jobTitleField.getText().toString();
+		//String organisation = organisationField.getText().toString();
 		
 		// do validation
 		// check username
@@ -238,11 +222,11 @@ public class RegisterFragment extends AppFragment implements SubmitListener, Reg
 			return;
 		}
 
-		// check phone no
+		/* check phone no
 		if (phoneNo.length() < 8) {
 			UIUtils.showAlert(super.getActivity(),R.string.error,R.string.error_register_no_phoneno);
 			return;
-		}
+		}*/
 
     	User u = new User();
 		u.setUsername(username);
@@ -251,11 +235,20 @@ public class RegisterFragment extends AppFragment implements SubmitListener, Reg
 		u.setFirstname(firstname);
 		u.setLastname(lastname);
 		u.setEmail(email);
-		u.setJobTitle(jobTitle);
-		u.setOrganisation(organisation);
-		u.setPhoneNo(phoneNo);
+		//u.setJobTitle(jobTitle);
+		//u.setOrganisation(organisation);
+		//u.setPhoneNo(phoneNo);
 
-		executeRegisterTask(u);
+        String sex = sexField.getSelectedItem().toString();
+        u.setSex(sex);
+        String role = roleField.getSelectedItem().toString();
+        u.setRole(role);
+        String ageRange = ageRangeField.getSelectedItem().toString();
+        u.setAgeRange(ageRange);
+        String location = locationField.getText().toString();
+        u.setLocation(location);
+
+        executeRegisterTask(u);
 	}
 
 	@Override
