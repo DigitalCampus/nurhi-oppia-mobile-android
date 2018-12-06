@@ -315,6 +315,7 @@ public class ResourceWidget extends WidgetFactory {
 			File file = (File) v.getTag();
 			// check the file is on the file system (should be but just in case)
 			boolean exists = Storage.mediaFileExists(ctx, file.getName());
+			Log.d(TAG, file.getName());
 			if(!exists){
 				Toast.makeText(ctx, ctx.getString(R.string.error_resource_not_found,file.getName()), Toast.LENGTH_LONG).show();
 				return;
