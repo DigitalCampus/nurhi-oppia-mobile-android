@@ -160,7 +160,7 @@ public class ResourceWidget extends WidgetFactory {
 		editor.putBoolean("widget_"+activity.getDigest()+"_Resource_Viewing", this.isResourceViewing());
 		editor.putLong("widget_"+activity.getDigest()+"_Resource_StartTime", this.getResourceStartTime());
 		editor.putString("widget_"+activity.getDigest()+"_Resource_FileName", this.getResourceFileName());
-		editor.commit();
+		editor.apply();
 	}
 	
 	@Override
@@ -192,7 +192,7 @@ public class ResourceWidget extends WidgetFactory {
 				editor.remove(entry.getKey());
 			}            
 		 }
-		editor.commit();
+		editor.apply();
 	}
 	
 	private void resourceStopped() {
@@ -214,9 +214,10 @@ public class ResourceWidget extends WidgetFactory {
 				Mint.logException(e);
 				e.printStackTrace();
 			}
-			MetaDataUtils mdu = new MetaDataUtils(super.getActivity());
+
 			// add in extra meta-data
 			try {
+				MetaDataUtils mdu = new MetaDataUtils(super.getActivity());
 				data = mdu.getMetaData(data);
 			} catch (JSONException e) {
 				// Do nothing
@@ -250,7 +251,7 @@ public class ResourceWidget extends WidgetFactory {
 
 	@Override
 	public HashMap<String, Object> getWidgetConfig() {
-		HashMap<String, Object> config = new HashMap<String, Object>();
+		HashMap<String, Object> config = new HashMap<>();
 		config.put(WidgetFactory.PROPERTY_ACTIVITY_STARTTIME, this.getStartTime());
 		config.put(PROPERTY_RESOURCE_VIEWING, this.isResourceViewing());
 		config.put(PROPERTY_RESOURCE_STARTTIME, this.getResourceStartTime());

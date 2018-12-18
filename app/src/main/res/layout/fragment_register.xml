@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:fillViewport="true"
+                android:layout_height="wrap_content"
                 android:gravity="center">
 
     <ScrollView
         android:id="@+id/register_form"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/form_bottom">
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/form_bottom"
+        android:layout_alignParentTop="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -38,87 +41,101 @@
                 android:paddingLeft="@dimen/padding_large"
                 android:paddingRight="@dimen/activity_horizontal_margin">
 
-                <android.support.design.widget.TextInputLayout
+                <org.digitalcampus.oppia.utils.ui.ValidableTextInputLayout
+                    android:id="@+id/register_form_username_field"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    app:required="true"
+                    app:cantContainSpaces="true">
 
                     <EditText
-                        android:id="@+id/register_form_username_field"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/register_form_username_title"
                         android:inputType="text"
-                        android:textSize="15sp"/>
+                        android:textSize="15sp"
 
-                </android.support.design.widget.TextInputLayout>
+                        />
 
-                <android.support.design.widget.TextInputLayout
+                </org.digitalcampus.oppia.utils.ui.ValidableTextInputLayout>
+
+
+                <org.digitalcampus.oppia.utils.ui.ValidableTextInputLayout
+                    android:id="@+id/register_form_password_field"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    app:required="true"
+                    app:cantContainSpaces="true">
 
                     <EditText
-                        android:id="@+id/register_form_email_field"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/register_form_password_title"
+                        android:inputType="textPassword"
+                        android:textSize="15sp"/>
+                </org.digitalcampus.oppia.utils.ui.ValidableTextInputLayout>
+
+                <org.digitalcampus.oppia.utils.ui.ValidableTextInputLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/register_form_password_again_field"
+                    android:layout_height="wrap_content"
+                    app:required="true"
+                    app:cantContainSpaces="true">
+
+                    <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/register_form_password_again_title"
+                        android:inputType="textPassword"
+                        android:textSize="15sp"/>
+                </org.digitalcampus.oppia.utils.ui.ValidableTextInputLayout>
+
+                <org.digitalcampus.oppia.utils.ui.ValidableTextInputLayout
+                    android:id="@+id/register_form_email_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:required="true"
+                    app:cantContainSpaces="true">
+
+                    <EditText
+
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/register_form_email_title"
                         android:inputType="textEmailAddress"
                         android:textSize="15sp"/>
 
-                </android.support.design.widget.TextInputLayout>
+                </org.digitalcampus.oppia.utils.ui.ValidableTextInputLayout>
 
-                <android.support.design.widget.TextInputLayout
+                <org.digitalcampus.oppia.utils.ui.ValidableTextInputLayout
+                    android:id="@+id/register_form_firstname_field"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    app:required="true">
 
                     <EditText
-                        android:id="@+id/register_form_password_field"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/register_form_password_title"
-                        android:inputType="textPassword"
-                        android:textSize="15sp"/>
-                </android.support.design.widget.TextInputLayout>
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <EditText
-                        android:id="@+id/register_form_password_again_field"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/register_form_password_again_title"
-                        android:inputType="textPassword"
-                        android:textSize="15sp"/>
-                </android.support.design.widget.TextInputLayout>
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <EditText
-                        android:id="@+id/register_form_firstname_field"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/register_form_firstname_title"
                         android:inputType="text"
                         android:textSize="15sp"/>
-                </android.support.design.widget.TextInputLayout>
+                </org.digitalcampus.oppia.utils.ui.ValidableTextInputLayout>
 
-                <android.support.design.widget.TextInputLayout
+                <org.digitalcampus.oppia.utils.ui.ValidableTextInputLayout
+                    android:id="@+id/register_form_lastname_field"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    app:required="true">
 
                     <EditText
-                        android:id="@+id/register_form_lastname_field"
+
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/register_form_lastname_title"
                         android:inputType="text"
                         android:textSize="15sp"/>
-                </android.support.design.widget.TextInputLayout>
-
-
+                </org.digitalcampus.oppia.utils.ui.ValidableTextInputLayout>
 
                 <TextView
                     android:id="@+id/register_form_sex_title"
@@ -130,6 +147,7 @@
                     android:id="@+id/sex_spinner"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content" />
+
 
                 <TextView
                     android:id="@+id/register_form_role_title"
@@ -153,18 +171,15 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content" />
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
 
-                    <EditText
-                        android:id="@+id/register_form_location_field"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/register_form_location_title"
-                        android:inputType="text"
-                        android:textSize="15sp"/>
-                </android.support.design.widget.TextInputLayout>
+                <EditText
+                    android:id="@+id/register_form_location_field"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/register_form_location_title"
+                    android:inputType="text"
+                    android:textSize="15sp"/>
+
 
             </LinearLayout>
 
@@ -185,7 +200,7 @@
         android:paddingLeft="@dimen/padding_large"
         android:paddingTop="@dimen/padding_medium"
         android:paddingRight="@dimen/padding_large"
-        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/padding_medium"
         android:weightSum="2">
 
         <LinearLayout
@@ -208,7 +223,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:text="Login"/>
+                android:text="@string/tab_title_login"/>
         </LinearLayout>
 
         <Button
