@@ -141,6 +141,7 @@ public class LoginTask extends APIRequestTask<Payload, Object, Payload> {
 			payload.setResult(false);
 			payload.setResultResponse(ctx.getString(R.string.error_connection));
 		} catch (IOException e) {
+            e.printStackTrace();
 			payload.setResult(false);
 			payload.setResultResponse(ctx.getString(R.string.error_connection_required));
 		} catch (JSONException e) {

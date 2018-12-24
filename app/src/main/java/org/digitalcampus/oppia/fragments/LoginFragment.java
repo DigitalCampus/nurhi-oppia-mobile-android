@@ -14,7 +14,6 @@
  * You should have received a copy of the GNU General Public License
  * along with OppiaMobile. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package org.digitalcampus.oppia.fragments;
 
 import android.app.ProgressDialog;
