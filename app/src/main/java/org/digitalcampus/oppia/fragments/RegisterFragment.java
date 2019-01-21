@@ -48,6 +48,7 @@ import org.digitalcampus.oppia.utils.ui.ValidableTextInputLayout;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -79,6 +80,36 @@ public class RegisterFragment extends AppFragment implements SubmitListener, Reg
 	    return new RegisterFragment();
 	}
 
+
+	private static class ValueLabelPair {
+		public String label;
+		public String value;
+
+		public ValueLabelPair(String value, String label) {
+			this.label = label;
+			this.value = value;
+		}
+
+		public static List<ValueLabelPair> createFromResource(Context ctx, int arrayID){
+			List<ValueLabelPair> values = new ArrayList<>();
+			String[] tags = ctx.getResources().getStringArray(arrayID);
+			for(String tag : tags) {
+				String[] pair = tag.split(":");
+
+				String value = pair[0];
+				String label = pair[1];
+
+				values.add(new ValueLabelPair(value, label));
+			}
+			return values;
+		}
+
+		@Override
+		public String toString() {
+			return label;
+		}
+	}
+
 	public RegisterFragment(){
 		// Required empty public constructor
 	}
@@ -98,27 +129,22 @@ public class RegisterFragment extends AppFragment implements SubmitListener, Reg
 		//phoneNoField = (ValidableTextInputLayout) vv.findViewById(R.id.register_form_phoneno_field);
 
 		sexField = (Spinner) vv.findViewById(R.id.sex_spinner);
-		ArrayAdapter<CharSequence> sadapter = ArrayAdapter.createFromResource(super.getActivity(),
-				R.array.registerFormSex, android.R.layout.simple_spinner_item);
-		// Specify the layout to use when the list of choices appears
+		ArrayAdapter<ValueLabelPair> sadapter = new ArrayAdapter<>(getActivity(),
+				android.R.layout.simple_spinner_item, ValueLabelPair.createFromResource(getActivity(), R.array.registerFormSex));
 		sadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		// Apply the adapter to the spinner
 		sexField.setAdapter(sadapter);
 
         roleField = (Spinner) vv.findViewById(R.id.role_spinner);
-        ArrayAdapter<CharSequence> radapter = ArrayAdapter.createFromResource(super.getActivity(),
-                R.array.registerFormRole, android.R.layout.simple_spinner_item);
-        // Specify the layout to use when the list of choices appears
+        ArrayAdapter<ValueLabelPair> radapter = new ArrayAdapter<>(getActivity(),
+                android.R.layout.simple_spinner_item, ValueLabelPair.createFromResource(getActivity(), R.array.registerFormRole));
+
         radapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
         roleField.setAdapter(radapter);
 
         ageRangeField = (Spinner) vv.findViewById(R.id.agerange_spinner);
-        ArrayAdapter<CharSequence> aradapter = ArrayAdapter.createFromResource(super.getActivity(),
-                R.array.registerFormAgeRange, android.R.layout.simple_spinner_item);
-        // Specify the layout to use when the list of choices appears
+        ArrayAdapter<ValueLabelPair> aradapter = new ArrayAdapter<>(getActivity(),
+                android.R.layout.simple_spinner_item, ValueLabelPair.createFromResource(getActivity(), R.array.registerFormAgeRange));
         aradapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
         ageRangeField.setAdapter(aradapter);
 
         locationField = (EditText) vv.findViewById(R.id.register_form_location_field);
@@ -245,11 +271,11 @@ public class RegisterFragment extends AppFragment implements SubmitListener, Reg
             //u.setOrganisation(organisation);
             //u.setPhoneNo(phoneNo);
 
-            String sex = sexField.getSelectedItem().toString();
+			String sex = ((ValueLabelPair) sexField.getSelectedItem()).value;
             u.setSex(sex);
-            String role = roleField.getSelectedItem().toString();
+            String role = ((ValueLabelPair) roleField.getSelectedItem()).value;
             u.setRole(role);
-            String ageRange = ageRangeField.getSelectedItem().toString();
+            String ageRange = ((ValueLabelPair) ageRangeField.getSelectedItem()).value;
             u.setAgeRange(ageRange);
             String location = locationField.getText().toString();
             u.setLocation(location);
